@@ -1,0 +1,358 @@
+/* SITE OFICIAL DE LUCAS EDUARDO */
+
+/* --- 1. Variáveis e Reset Global --- */
+:root {
+    --p: #0077b6;
+    --s: #00b4d8;
+    --t: #343a40;
+    --sh: 0 4px 12px rgba(0, 0, 0, .1);
+    --br: 10px;
+}
+
+/* Reset Otimizado */
+*,
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--t);
+}
+
+body {
+    background-color: white;
+}
+
+/* --- 2. Títulos e Tipografia --- */
+h2,
+h3 {
+    font-weight: 700;
+    color: var(--p);
+    margin-bottom: .5em;
+}
+
+h3 {
+    color: var(--s);
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-size: 2.5em;
+    padding: 0 0 5px;
+    margin-bottom: 40px;
+    text-align: center;
+    border-bottom: 3px solid var(--s);
+    display: block;
+    width: 100%;
+}
+
+/* --- 3. Navbar (Fixo) --- */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 70px;
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: var(--sh);
+    z-index: 1000;
+}
+
+.navbar .logo {
+    font-size: 25px;
+    font-weight: 800;
+    color: var(--s);
+    text-decoration: none;
+}
+
+.navbar a {
+    color: var(--t);
+    text-decoration: none;
+    margin-left: 30px;
+    font-weight: 600;
+    transition: all .3s;
+}
+
+.navbar a:hover {
+    color: var(--p);
+    border-bottom: 2px solid var(--p);
+}
+
+/* --- 4. Seção HERO (index.html) --- */
+.hero-section {
+    background: linear-gradient(135deg, var(--p), var(--s));
+    padding: 130px 80px 100px 80px;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero-section h1 {
+    font-size: 3em;
+    color: white;
+    margin-bottom: 25px;
+}
+
+.hero-text-and-image {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.hero-text {
+    flex: 1;
+    max-width: 700px;
+}
+
+.hero-text p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1em;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    text-align: justify;
+    padding-right: 30px;
+}
+
+.hero-section strong {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Imagem Hero */
+.hero-image-container {
+    width: 360px;
+    height: 320px;
+    flex-shrink: 0;
+    border-radius: 40px;
+    overflow: hidden;
+    box-shadow: 0 0 0 10px var(--s),
+        0 15px 30px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 15px solid rgb(118, 228, 255);
+    border-radius: 40px;
+}
+
+/* --- 5. Layout das Páginas Internas (Global) --- */
+.content-page {
+    padding-top: 100px;
+}
+
+.content-section {
+    padding: 50px 70px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* --- 6. Cards (Biografia, Geral) --- */
+.card-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.card {
+    background-color: white;
+    padding: 30px;
+    border-radius: var(--br);
+    box-shadow: var(--sh);
+    flex: 1;
+    max-width: 500px;
+    transition: transform .3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* --- 7. Linha do Tempo (Formação Acadêmica) --- */
+.timeline {
+    border-left: 3.025px solid var(--s);
+    padding-left: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.timeline-item {
+    padding: 0 0 30px 20px;
+    position: relative;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -32px;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    background-color: var(--p);
+    border-radius: 50%;
+    border: 3px solid white;
+}
+
+.timeline-item .details {
+    font-size: 0.95em;
+    color: var(--t);
+    margin-bottom: 8px;
+    display: block;
+    font-style: italic;
+}
+
+/* --- 8. Hobbies (Cartões Uniformes) --- */
+.icon-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px 0 60px 0;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.icon-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 150px;
+    min-height: 130px;
+    margin: 15px 15px;
+    background-color: white;
+    padding: 20px 5px;
+    border-radius: var(--br);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    transition: transform .3s, box-shadow .3s;
+}
+
+.icon-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.icon-item .icon {
+    font-size: 50px;
+    margin-bottom: 10px;
+    display: block;
+    line-height: 1;
+}
+
+.icon-item span {
+    color: var(--p);
+    font-weight: 600;
+    font-size: 1em;
+}
+
+/* --- 9. Cartões de Projeto --- */
+.project-card {
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 30px;
+    border-left: 5px solid var(--s);
+    border-radius: var(--br);
+    box-shadow: var(--sh);
+    padding-left: 30px;
+}
+
+.project-card h3 {
+    color: var(--p);
+    font-weight: 700;
+    margin-bottom: 10px;
+    font-size: 1.3em;
+}
+
+.project-card p {
+    margin-bottom: 15px;
+}
+
+/* --- 10. Botão Principal (Link Externo) --- */
+.btn-primary {
+    display: inline-block;
+    background-color: var(--s);
+    color: white !important;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 10px;
+    transition: background-color .3s;
+}
+
+.btn-primary:hover {
+    background-color: var(--p);
+}
+
+/* --- 11. Inspirações (Citações e Mídia) --- */
+.inspiracao-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-bottom: 30px;
+}
+
+.cita-box {
+    flex: 1.5;
+    background-color: var(--p);
+    padding: 30px;
+    border-radius: var(--br);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.cita {
+    font-size: 1.5em;
+    font-style: italic;
+    line-height: 1.5;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.autor {
+    text-align: right;
+    font-weight: 500;
+    color: white;
+    font-size: 1em;
+}
+
+.media-list {
+    flex: 1;
+    min-width: 300px;
+}
+
+.media-list h3 {
+    text-align: left;
+    font-size: 1.5em;
+    font-weight: 800;
+}
+
+.media-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.media-list ul li {
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: var(--br);
+    box-shadow: var(--sh);
+    font-size: 1em;
+}
